@@ -20,22 +20,21 @@
     <section class="panel" aria-labelledby="form-title">
       <h2 id="form-title">Create Service Request</h2>
       <form id="request-form" novalidate>
-        <!-- TODO 1: Requester Name field -->
+<!-- TODO 1: Requester Name field -->
         <div class="field">
-          <label for="display-name">Requester Name</label>
-          <!-- aria-describedby(การเข้าถึงเว็บไซต์ของผู้พิการ) -->
+          <label for="requester-name">Requester Name</label>
           <input
-            id="dsplay-name"
-            name="displayName"
+            id="requester-name"
+            name="requesterName"
             type="text"
             minlength="2"
             placeholder="นักศึกษา ENGSE203" 
-            aria-describedby="displayName-hint displayName-error"   
+            aria-describedby="requesterName-hint requesterName-error"   
             required>
-          <small id="displayName-hint" class="hint">At least 2 characters.</small>
-          <small id="displayName-error" class="error"></small>
+          <small id="requesterName-hint" class="hint">At least 2 characters.</small>
+          <small id="requesterName-error" class="error"></small>
         </div>
-        <!-- TODO 2: Request Type select -->
+<!-- TODO 2: Request Type select -->
         <div class="field">
           <label for="request-type">Request Type</label>
           <select id="request-type" name="requestType" aria-describedby="requestType-error" required>
@@ -47,22 +46,22 @@
           </select>
           <small id="requestType-error" class="error"></small>
         </div>
-        <!-- TODO 3: Details textarea -->
+<!-- TODO 3: Details textarea -->
         <div class="field">
-          <label for="request-details">Details</label>
+          <label for="details">Details</label>
           <textarea
-            id="request-details"
-            name="request-details"
+            id="details"
+            name="details"
             rows="5"
             minlength="10"
             placeholder="เช่น ขอเปิดบัญชีสำหรับทดลองระบบ LAB 3 ในห้องเรียน"
-            aria-describedby="learningGoal-hint learningGoal-error"
+            aria-describedby="details-hint details-error" 
             required></textarea>
           <div class="field-meta">
-            <small id="requestDetails-hint" class="hint">At least 10 characters.</small>
-            <small id="details-count" class="counter" aria-live="polite">0 characters.</small>
+            <small id="details-hint" class="hint">อธิบายอย่างน้อย 10 ตัวอักษร</small>
+            <small id="details-count" class="counter" aria-live="polite">0 ตัวอักษร</small>
           </div>
-          <small id="requestDetails-error" class="error"></small>
+          <small id="details-error" class="error"></small> 
         </div>
 
         <button type="submit">Submit Request</button>

@@ -57,11 +57,8 @@ function renderErrors(errors) {
 
 form.addEventListener('input', () => {
   // TODO 9: Read → Render
-  form.addEventListener('input', () => {
     const data = readForm();
     renderPreview(data);
-  });
-
 });
 
 form.addEventListener('submit', (event) => {

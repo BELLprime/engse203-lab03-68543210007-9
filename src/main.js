@@ -5,10 +5,12 @@ const preview = {
   previewName: document.querySelector('#preview-name'),
   previewType: document.querySelector('#preview-type'),
   previewDetails: document.querySelector('#preview-details'),
+  
 }; 
 const status = document.querySelector('#form-status');
 const requestList = document.querySelector('#request-list');
 const detailsCount = document.querySelector('#details-count');
+const previewStatus = document.querySelector('#preview-status');
 
 // TODO 2: readForm()
 function readForm() {
@@ -62,6 +64,11 @@ function addRequest(data) {
 function renderStatus(state, message) {
   status.dataset.state = state;
   status.textContent = message;
+
+  if (previewStatus) {
+    previewStatus.dataset.state = state;
+    previewStatus.textContent = message;
+  }
 }
 
 function handleSubmit(form) { 
@@ -74,8 +81,7 @@ function handleSubmit(form) {
     return; 
   } 
  
-  addRequest(data); 
-  renderStatus('success', `เพิ่มรายการคำขอ ${data.requestType} ของคุณ ${data.requesterName} เรียบร้อยแล้ว`);
+  addRequest(data);
   renderStatus('success', 'บันทึกคําขอเรียบร้อย'); 
   form.reset(); 
   renderPreview(readForm(form)); 
@@ -92,4 +98,5 @@ form.addEventListener('submit', (event) => {
 }); 
 
 renderPreview(readForm());
+renderStatus('idle', 'พร้อมเริ่มกรอกข้อมูลใหม่');
 console.log('LAB 3 starter ready', form);

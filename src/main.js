@@ -6,7 +6,7 @@ const preview = {
   previewType: document.querySelector('#preview-type'),
   previewDetails: document.querySelector('#preview-details'),
 }; 
-const statusElement = document.querySelector('#form-status');
+const status = document.querySelector('#form-status');
 const requestList = document.querySelector('#request-list');
 const detailsCount = document.querySelector('#details-count');
 
@@ -58,6 +58,12 @@ function addRequest(data) {
   requestList.prepend(item); 
 }
 
+
+function renderStatus(state, message) {
+  status.dataset.state = state;
+  status.textContent = message;
+}
+
 function handleSubmit(form) { 
   const data = readForm(form); 
   const errors = validate(data); 
@@ -69,6 +75,7 @@ function handleSubmit(form) {
   } 
  
   addRequest(data); 
+  renderStatus('success', `เพิ่มรายการคำขอ ${data.requestType} ของคุณ ${data.requesterName} เรียบร้อยแล้ว`);
   renderStatus('success', 'บันทึกคําขอเรียบร้อย'); 
   form.reset(); 
   renderPreview(readForm(form)); 

@@ -20,7 +20,7 @@
 
 ## เครื่องมือที่ใช้
 
-- Vite `^7.0.0` (dev server / build tool)
+- Vite `^8.1.1` (dev server / build tool)
 - JavaScript (Vanilla, ES Modules), HTML5, CSS3
 - Node.js `>=22.12.0`, npm
 - Git และ GitHub / GitHub Pages
